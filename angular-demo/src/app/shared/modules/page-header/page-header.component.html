@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-xl-12">
+        <h2 class="page-header">
+            <a *ngIf="backButton" [routerLink]="['/'+backButton]" class="pull-left mr-3"><i class="fa fa-long-arrow-left"></i></a>
+
+            {{heading}}
+
+            <button *ngIf="addButton" [routerLink]="['/'+addButton]" class="btn btn-md btn-primary pull-right" type="button"><i class="fa fa-plus"></i></button>
+        </h2>
+    </div>
+</div>

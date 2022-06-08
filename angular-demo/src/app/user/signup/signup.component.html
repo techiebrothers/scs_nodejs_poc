@@ -1,0 +1,117 @@
+<app-header></app-header>
+<section class="page-section" id="contact"
+    style="background: url(assets/img/login_bg.jpg) no-repeat center; background-size: 100% 100%; min-height: calc(100vh - 34px); height: auto;">
+    <div class="container fadeInDown">
+        <div class="row justify-content-center">
+            <div class="text-center text-white mb-4">Welcome, please login with your registered email and password!
+            </div>
+            <div class="col-lg-4 col-xl-4 login_box" style="background: #ffffff;">
+                <form id="contactForm" #angForm="ngForm" novalidate (submit)="onRegister();">
+                    <div class="form-group has-danger">
+                        <label class="form-control-label required" for="inputError">{{'First Name' | translate}}</label>
+                        <input type="text" class="form-control form-control-danger fadeIn first"
+                            placeholder="First Name" name="first_name" [(ngModel)]="userDetail.first_name" #first_name="ngModel"
+                            required>
+                        <p class="error-msg"
+                            *ngIf="!first_name.errors?.pattern && first_name.invalid && (first_name.dirty || first_name.touched)">{{
+                            'First Name is required' | translate }}</p>
+                    </div>
+                    <div class="form-group has-danger">
+                        <label class="form-control-label required" for="inputError">{{'Last Name' | translate}}</label>
+                        <input type="text" class="form-control form-control-danger fadeIn first" placeholder="Last Name"
+                            name="last_name" [(ngModel)]="userDetail.last_name" #last_name="ngModel" required>
+                        <p class="error-msg"
+                            *ngIf="!last_name.errors?.pattern && last_name.invalid && (last_name.dirty || last_name.touched)">{{
+                            'Last Name is required' | translate }}</p>
+                    </div>
+
+                    <div class="form-group has-danger">
+                        <label class="form-control-label required" for="inputError">{{'Email' | translate}}</label>
+                        <input type="text" class="form-control form-control-danger fadeIn first" placeholder="Email"
+                            name="email" [(ngModel)]="userDetail.email" #email="ngModel" required
+                            [pattern]='emailPattern'>
+                        <p class="error-msg"
+                            *ngIf="!email.errors?.pattern && email.invalid && (email.dirty || email.touched)">{{
+                            'Email is required' | translate }}</p>
+                        <p class="error-msg" *ngIf="email.errors?.pattern && (email.dirty || email.touched)">{{ 'Email
+                            is invalid' | translate }}</p>
+                    </div>
+
+                    <div class="form-group has-danger">
+                        <label class="form-control-label required" for="password">{{'Password' | translate}}</label>
+                        <input type="password" class="form-control form-control-danger fadeIn first"
+                            placeholder="Password" name="password" id="password" [(ngModel)]="userDetail.password"
+                            #password="ngModel" autocomplete="false" required>
+                        <p class="error-msg" *ngIf="(password.invalid && (password.dirty || password.touched))">{{
+                            'Password is required' | translate }}</p>
+                    </div>
+
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-danger mb-3">Error sending message!</div>
+                    </div>
+                    <button class="btn btn-primary btn-sm" id="submitButton" type="submit"
+                        [disabled]="!angForm.valid || isLoading">Register <i class="fa fa-spinner fa-spin"
+                            *ngIf="isLoading"></i></button>
+                    <a class="float-right" [routerLink]="['/login']"> Already have an account?</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>
+<!-- 
+
+<div class="login-page">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <h2 class="inactive underlineHover" [routerLink]="['/login']"> {{
+                'Sign In' | translate }} </h2>
+            <h2 class="active "> {{
+                'Sign Up' | translate }} </h2>
+
+            <div class="fadeIn first">
+                <img src="./assets/images/user_icon.svg" id="icon" alt="User Icon" />
+            </div>
+            <form #angForm="ngForm" novalidate>
+                <div class="form-content">
+                    <div class="form-group">
+                        <input type="text" class="form-control fadeIn first" placeholder="Full name" name="name"
+                            [(ngModel)]="userDetail.name" #name="ngModel" required>
+                    </div>
+                    <ngb-alert type="danger" *ngIf="name.invalid && (name.dirty || name.touched)">{{ 'Name is required'
+                        | translate }}</ngb-alert>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control fadeIn first" placeholder="Email" name="email"
+                            [(ngModel)]="userDetail.email" #email="ngModel" required [pattern]='emailPattern'>
+                    </div>
+                    <ngb-alert type="danger" *ngIf="!email.errors?.pattern && email.invalid && (email.dirty || email.touched)">{{
+                        'Email is required' | translate }}</ngb-alert>
+                    <ngb-alert type="danger" *ngIf="email.errors?.pattern && (email.dirty || email.touched)">{{ 'Email
+                        is invalid' | translate }}</ngb-alert>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control fadeIn first" placeholder="Password"
+                            name="password" [(ngModel)]="userDetail.password" #password="ngModel" autocomplete="false"
+                            required>
+                    </div>
+                    <ngb-alert type="danger" *ngIf="password.invalid && (password.dirty || password.touched)">{{
+                        'Password is required' | translate }}</ngb-alert>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control fadeIn first" placeholder="Confirm Password"
+                            name="confirmPassword" [(ngModel)]="userDetail.confirmPassword" #confirmPassword="ngModel"
+                            autocomplete="false" required>
+                    </div>
+                    <ngb-alert type="danger" *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">{{
+                        'Confirm Password is required' | translate }}</ngb-alert>
+                    <ngb-alert type="danger" *ngIf="confirmPassword.value && confirmPassword.value!=password.value && (confirmPassword.dirty || confirmPassword.touched)">{{
+                        'Confirm Password not match' | translate }}</ngb-alert>
+                </div>
+                <button (click)="onRegister()" [disabled]="angForm.invalid" class="fadeIn first loginButton"> {{
+                    'Register' | translate }} </button>
+                &nbsp;
+            </form>
+        </div>
+    </div>
+</div> -->

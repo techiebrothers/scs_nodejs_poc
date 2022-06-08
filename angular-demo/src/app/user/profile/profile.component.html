@@ -1,0 +1,146 @@
+<div [@routerTransition]>
+
+    <section class="page-section-inner portfolio" id="portfolio">
+
+        <div class="container">
+            <h5 class="page-header p-0">
+                <a href="javascript:void(0)" (click)="authService.goBack()" class="btn btn-link p-0"><i
+                        class="fa fa-arrow-left"></i></a> Profile
+            </h5>
+            <div class="row card-body">
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm-8">
+                    <div class="create_content_div">
+                        <form id="contentForm" #angForm="ngForm" novalidate (submit)="saveItem(angForm);">
+                            <div class="row">
+                                <div class="form-group has-danger col-sm-6">
+                                    <label class="required">Display Name</label>
+                                    <input class="form-control" name="name" id="name" [(ngModel)]="userDetail.name"
+                                        #name="ngModel" required placeholder="Enter Display Name">
+                                    <p class="error-msg" *ngIf="name.invalid && (name.dirty || name.touched)">{{
+                                        'Display Name is required' | translate }}</p>
+                                </div>
+                                <div class="form-group has-danger col-sm-6">
+                                    <label class="required">First Name</label>
+                                    <input class="form-control" name="first_name" id="first_name"
+                                        [(ngModel)]="userDetail.first_name" #first_name="ngModel" required
+                                        placeholder="Enter First Name">
+                                    <p class="error-msg"
+                                        *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)">{{
+                                        'First Name is required' | translate }}</p>
+                                </div>
+                                <div class="form-group has-danger col-sm-6">
+                                    <label class="required">Last Name</label>
+                                    <input class="form-control" name="last_name" id="last_name"
+                                        [(ngModel)]="userDetail.last_name" #last_name="ngModel" required
+                                        placeholder="Enter Last Name">
+                                    <p class="error-msg"
+                                        *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)">{{
+                                        'Last Name is required' | translate }}</p>
+                                </div>
+                                <div class="form-group has-danger col-sm-6">
+                                    <label class="form-control-label required" for="inputError">{{'Email' |
+                                        translate}}</label>
+                                    <input type="text" class="form-control form-control-danger fadeIn first"
+                                        placeholder="Email" name="email" [(ngModel)]="userDetail.email" #email="ngModel"
+                                        required [pattern]='emailPattern' disabled>
+                                    <p class="error-msg"
+                                        *ngIf="!email.errors?.pattern && email.invalid && (email.dirty || email.touched)">
+                                        {{
+                                        'Email is required' | translate }}</p>
+                                    <p class="error-msg"
+                                        *ngIf="email.errors?.pattern && (email.dirty || email.touched)">{{
+                                        'Email
+                                        is invalid' | translate }}</p>
+
+                                </div>
+                                <div class="form-group has-danger col-sm-6">
+                                    <label class="required">Phone</label>
+                                    <input class="form-control" name="phone" id="phone" [(ngModel)]="userDetail.phone"
+                                        #phone="ngModel" required placeholder="Enter Phone">
+                                    <p class="error-msg" *ngIf="phone.invalid && (phone.dirty || phone.touched)">{{
+                                        'Phone is required' | translate }}</p>
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="!userDetail.id">
+                                <div class="form-group has-danger col-sm-6">
+                                    <label class="form-control-label required" for="inputError">{{'Password' |
+                                        translate}}</label>
+                                    <input type="password" class="form-control form-control-danger" name="password"
+                                        [(ngModel)]="userDetail.password" #password="ngModel" autocomplete="false"
+                                        required autocomplete="off">
+                                    <p *ngIf="password.invalid && (password.dirty || password.touched)"
+                                        class="error-msg">{{
+                                        'Password is required' | translate }}</p>
+                                </div>
+
+                                <div class="form-group has-danger col-sm-6">
+                                    <label class="form-control-label required" for="inputError">{{'Confirm Password'
+                                        |
+                                        translate}}</label>
+                                    <input type="password" class="form-control form-control-danger"
+                                        name="confirmPassword" [(ngModel)]="userDetail.confirmPassword"
+                                        #confirmPassword="ngModel" autocomplete="false" required autocomplete="off">
+                                    <p class="error-msg"
+                                        *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+                                        {{
+                                        'Confirm Password is required' | translate }}</p>
+
+                                    <p class="error-msg"
+                                        *ngIf="confirmPassword.value && (confirmPassword.value!=password.value) && (confirmPassword.dirty || confirmPassword.touched)">
+                                        {{
+                                        'Confirm Password not match' | translate }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group has-danger col-sm-6">
+                                    <label class="form-control-label float-left p-0" for="inputError">{{'Profile
+                                        Picture' |
+                                        translate}}</label>
+                                    <input type="file" name="profile_picture" id="profile_picture" class="form-control"
+                                        [accept]="accept_file['image']" (change)="fileChangeEvent($event, content)"
+                                        *ngIf="!userDetail.profile_picture.file_src" style="line-height: 23px;">
+                                    <span class="preview_image_span ml-3" *ngIf="userDetail.profile_picture.file_src">
+                                        <img class="preview_t_image" [src]="userDetail.profile_picture.file_src"
+                                            alt="your file" />
+                                        <i class="fa fa-times" (click)="removeFile()"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-12 m-0">
+                                    <button class="btn btn-primary float-right"
+                                        [disabled]="!angForm.valid">Save</button>
+                                    <button class="btn btn-secondary float-right mr-2" (click)="cancelProfileEdit()"
+                                        type="button">Cancel</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Crop Image</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body p-0" style="text-align: center;">
+        <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="4 / 4"
+            format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+            (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"></image-cropper>
+
+        <!-- <img [src]="croppedImage" /> -->
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark"
+            (click)="modal.close('Save click');saveCroppedImage()">Save</button>
+    </div>
+</ng-template>

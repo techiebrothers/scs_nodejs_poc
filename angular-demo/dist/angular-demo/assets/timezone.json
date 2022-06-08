@@ -1,0 +1,126 @@
+[
+  {
+    "label": "Midway Islands Time (GMT-11:00)",
+    "value": "-11:00"
+  },
+  {
+    "label": "Hawaii Standard Time (GMT-10:00)",
+    "value": "-10:00"
+  },
+  {
+    "label": "Alaska Standard Time (GMT-9:00)",
+    "value": "-9:00"
+  },
+  {
+    "label": "Pacific Standard Time (GMT-8:00)",
+    "value": "-8:00"
+  },
+  {
+    "label": "Phoenix Standard Time (GMT-7:00)",
+    "value": "-7:00"
+  },
+  {
+    "label": "Mountain Standard Time (GMT-7:00)",
+    "value": "-7:00"
+  },
+  {
+    "label": "Central Standard Time (GMT-6:00)",
+    "value": "-6:00"
+  },
+  {
+    "label": "Eastern Standard Time (GMT-5:00)",
+    "value": "-5:00"
+  },
+  {
+    "label": "Indiana Eastern Standard Time (GMT-5:00)",
+    "value": "-5:00"
+  },
+  {
+    "label": "Puerto Rico and US Virgin Islands Time (GMT-4:00)",
+    "value": "-4:00"
+  },
+  {
+    "label": "Canada Newfoundland Time (GMT-3:30)",
+    "value": "-3:30"
+  },
+  {
+    "label": "Argentina Standard Time (GMT-3:00)",
+    "value": "-3:00"
+  },
+  {
+    "label": "Brazil Eastern Time (GMT-3:00)",
+    "value": "-3:00"
+  },
+  {
+    "label": "Central African Time (GMT-1:00)",
+    "value": "-1:00"
+  },
+  {
+    "label": "Universal Time/Greenwich Mean Time (GMT+00:00)",
+    "value": "+00:00"
+  },
+  {
+    "label": "European Central Time (GMT+1:00)",
+    "value": "+1:00"
+  },
+  {
+    "label": "Eastern European Time (GMT+2:00)",
+    "value": "+2:00"
+  },
+  {
+    "label": "(Arabic) Egypt Standard Time (GMT+2:00)",
+    "value": "+2:00"
+  },
+  {
+    "label": "Eastern African Time (GMT+3:00)",
+    "value": "+3:00"
+  },
+  {
+    "label": "Middle East Time (GMT+3:30)",
+    "value": "+3:30"
+  },
+  {
+    "label": "Near East Time (GMT+4:00)",
+    "value": "+4:00"
+  },
+  {
+    "label": "Pakistan Lahore Time (GMT+5:00)",
+    "value": "+5:00"
+  },
+  {
+    "label": "India Standard Time (GMT+5:30)",
+    "value": "+5:30"
+  },
+  {
+    "label": "Bangladesh Standard Time (GMT+6:00)",
+    "value": "+6:00"
+  },
+  {
+    "label": "Vietnam Standard Time (GMT+7:00)",
+    "value": "+7:00"
+  },
+  {
+    "label": "China Taiwan Time (GMT+8:00)",
+    "value": "+8:00"
+  },
+  {
+    "label": "Japan Standard Time (GMT+9:00)",
+    "value": "+9:00"
+  },
+  {
+    "label": "Australia Central Time (GMT+9:30)",
+    "value": "+9:30"
+  },
+  {
+    "label": "Australia Eastern Time (GMT+10:00)",
+    "value": "+10:00"
+  },
+  {
+    "label": "Solomon Standard Time (GMT+11:00)",
+    "value": "+11:00"
+  },
+  {
+    "label": "New Zealand Standard Time (GMT+12:00)",
+    "value": "+12:00"
+  }
+]

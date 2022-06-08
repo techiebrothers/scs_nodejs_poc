@@ -1,0 +1,352 @@
+// start responsive css
+@media only screen 
+  // and (min-device-width: 320px) 
+  and (max-device-width: 480px) {
+    .top_menu_left {
+        margin-top: 8px;
+    }
+    #site_logo {
+        width: 250px;
+        margin-right: 50px;
+    }
+    .top_banner {
+        margin: 0px;
+        height: 48px;
+    }
+    #top_banner {
+        margin-top: 5px;
+    }
+    .banner_text {
+        padding: 0;
+        font-size: 16px !important;
+        height: 48px;
+        margin-top: 0px;
+        top: 0;
+    }
+    #top_profile_menu {
+        position: absolute;
+        right: 0px;
+        top: 7px;
+        width: 47px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    h5 a {
+        font-size: 14px;
+        border: 0;
+    }
+    #top_of_table {
+        display: flex;
+        flex-direction: column;
+    }
+    #top_of_table > div:first-child {
+        order: 2;
+
+    }
+    #top_of_table > div:last-child {
+        order: 1;
+    }
+    #top_of_table ng-multiselect-dropdown, #top_of_table select {
+        width: 45% !important;
+        margin-top: 10px;
+    }
+    .stick_table table th:last-child, .stick_table table td:last-child {
+        right: unset;
+        z-index: 2;
+        position: sticky;
+        background-color: #ffffff;
+        box-shadow: unset;
+    }
+    .column_item {
+        display: inline-block;
+        width: 50%;
+    }
+    .two_multi_select {
+        display: inline-block;
+        width: 100%;
+    }
+    .stick_table table table th {
+        background: #f1f1f1 !important;
+    }
+    .dtype_div {
+        margin-left: 0px !important;
+    }
+    #contentForm angular-editor {
+        width: 100% !important;
+    }
+    .advance_filter_check {
+        padding: 0px;
+        padding-left: 10px;
+    }
+    .advance_filter_check:first-child {
+        padding-left: 10px;
+    }
+    input#filter_text {
+        width: 170px !important;
+    }
+    .two_simple_select {
+        display: flex;
+        float: right;
+        margin-top: 5px;
+    }
+    .type_filter {
+        margin-top: 5px;
+    }
+    .modal-dialog {
+        max-width: 100%;
+        display: inline-block;
+    }
+    #timezones_select {
+        max-width: 92%;
+        margin-top: 5px;
+    }
+    #columnForm {
+        display: inline-block;
+        width: 100%;
+        overflow: auto;
+    }
+    .left_tree_div {
+        width: 100% !important;
+    }
+    .content_div {
+        width: 100% !important;
+        padding: 10px !important;
+    }
+    .content_lidt_div {
+        width: 100% !important;
+        min-height: unset !important;
+    }
+}
+@media only screen 
+  and (min-device-width: 480px) 
+  and (max-device-width: 768px) {
+    .main-container {
+        margin-top: 147px !important;
+    }
+    .top_menu_left {
+        margin-top: 8px;
+    }
+    #site_logo {
+        width: 370px;
+        margin-right: 50px;
+    }
+    .top_banner {
+        margin: 0px;
+        height: 73px;
+    }
+    #top_banner {
+        margin-top: 5px;
+    }
+    .banner_text {
+        padding: 8px;
+        font-size: 18px !important;
+        height: 73px;
+        margin-top: 0px;
+        top: 0;
+    }
+    #top_profile_menu {
+        position: absolute;
+        right: 0px;
+        top: 20px;
+        width: 47px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    h5 a {
+        font-size: 14px;
+        border: 0;
+    }
+    #top_of_table {
+        display: flex;
+        flex-direction: column;
+    }
+    #top_of_table > div:first-child {
+        order: 2;
+
+    }
+    #top_of_table > div:last-child {
+        order: 1;
+    }
+    #top_of_table ng-multiselect-dropdown, #top_of_table select {
+        width: 45% !important;
+        margin-top: 10px;
+    }
+    .stick_table table th:last-child, .stick_table table td:last-child {
+        right: unset;
+        z-index: 2;
+        position: sticky;
+        background-color: #ffffff;
+        box-shadow: unset;
+    }
+    .column_item {
+        display: inline-block;
+        width: 50%;
+    }
+    .two_multi_select {
+        display: inline-block;
+        width: 100%;
+    }
+    .stick_table table table th {
+        background: #f1f1f1 !important;
+    }
+    .dtype_div {
+        margin-left: 0px !important;
+    }
+    #contentForm angular-editor {
+        width: 100% !important;
+    }
+    .advance_filter_check {
+        padding: 0px;
+        padding-left: 10px;
+    }
+    .advance_filter_check:first-child {
+        padding-left: 10px;
+    }
+    input#filter_text {
+        width: 170px !important;
+    }
+    .two_simple_select {
+        display: flex;
+        float: right;
+        margin-top: 5px;
+    }
+    .type_filter {
+        margin-top: 5px;
+    }
+    .modal-dialog {
+        max-width: 100%;
+        display: inline-block;
+    }
+    #timezones_select {
+        max-width: 92%;
+        margin-top: 5px;
+    }
+    #columnForm {
+        display: inline-block;
+        width: 100%;
+        overflow: auto;
+    }
+}
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1000px) {
+    .main-container {
+        margin-top: 173px !important;
+    }
+    .top_menu_left {
+        margin-top: 8px;
+    }
+    #site_logo {
+        width: 370px;
+        margin-right: 50px;
+    }
+    .top_banner {
+        margin: 0px;
+        height: 99px;
+    }
+    #top_banner {
+        margin-top: 5px;
+    }
+    .banner_text {
+        padding: 21px;
+        font-size: 20px !important;
+        height: 99px;
+        margin-top: 0px;
+        top: 0;
+    }
+    #top_profile_menu {
+        position: absolute;
+        right: 0px;
+        top: 20px;
+        width: 47px;
+    }
+    h4 {
+        font-size: 18px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    h5 a {
+        font-size: 14px;
+        border: 0;
+    }
+    #top_of_table {
+        display: flex;
+        flex-direction: column;
+    }
+    #top_of_table > div:first-child {
+        order: 2;
+        width: 100%;
+    }
+    #top_of_table > div:last-child {
+        order: 1;
+        width: 100%;
+    }
+    #top_of_table ng-multiselect-dropdown, #top_of_table select {
+        width: 45% !important;
+        margin-top: 10px;
+    }
+    .stick_table table th:last-child, .stick_table table td:last-child {
+        right: unset;
+        z-index: 2;
+        position: sticky;
+        background-color: #ffffff;
+        box-shadow: unset;
+    }
+    .column_item {
+        display: inline-block;
+        width: 50%;
+    }
+    .two_multi_select {
+        display: inline-block;
+        width: 100%;
+    }
+    .stick_table table table th {
+        background: #f1f1f1 !important;
+    }
+    .dtype_div {
+        margin-left: 0px !important;
+    }
+    #contentForm angular-editor {
+        width: 100% !important;
+    }
+    .advance_filter_check {
+        padding: 0px;
+        padding-left: 10px;
+    }
+    .advance_filter_check:first-child {
+        padding-left: 10px;
+    }
+    input#filter_text {
+        width: 170px !important;
+    }
+    .two_simple_select {
+        display: flex;
+        float: right;
+        margin-top: 5px;
+    }
+    .type_filter {
+        margin-top: 5px;
+    }
+    .modal-dialog {
+        max-width: 100%;
+        display: inline-block;
+    }
+    #timezones_select {
+        max-width: 92%;
+        margin-top: 5px;
+    }
+    #columnForm {
+        display: inline-block;
+        width: 100%;
+        overflow: auto;
+    }
+}

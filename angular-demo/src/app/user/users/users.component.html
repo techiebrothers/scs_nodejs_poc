@@ -1,0 +1,85 @@
+<div [@routerTransition]>
+
+    <section class="page-section-inner portfolio" id="portfolio">
+
+        <div class="container">
+            <h5 class="page-header p-0">
+                <a href="javascript:void(0)" (click)="authService.goBack()" class="btn btn-link p-0"><i
+                        class="fa fa-arrow-left"></i></a> Users
+            </h5>
+
+            <div class="row" id="top_of_table">
+                <div class="col-sm-2 pl-0">
+                    <div class="float-left mt-2 text-danger">
+                        <span *ngIf="totalItems == totalRecords">Showing {{totalRecords}} records</span>
+                        <span *ngIf="totalItems != totalRecords">Showing {{totalItems}} of {{totalRecords}}
+                            records</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="card-body table-responsive p-0">
+                    <div id="contents" class="stick_table">
+                        <table class="table table-hover table-striped1 no_wrap_th table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>{{'No.' | translate}}</th>
+                                    <th class="sort"
+                                        [ngClass]="sortbyService.column=='first_name' ? sortbyService.direction:''"
+                                        (click)="sortbyService.sort('first_name');getListInitial();">
+                                        First Name</th>
+
+                                    <th class="sort"
+                                        [ngClass]="sortbyService.column=='last_name' ? sortbyService.direction:''"
+                                        (click)="sortbyService.sort('last_name');getListInitial();">
+                                        Last Name</th>
+
+                                    <th class="sort"
+                                        [ngClass]="sortbyService.column=='email' ? sortbyService.direction:''"
+                                        (click)="sortbyService.sort('email');getListInitial();">
+                                        Email</th>
+
+                                    <th class="sort"
+                                        [ngClass]="sortbyService.column=='status' ? sortbyService.direction:''"
+                                        (click)="sortbyService.sort('status');getListInitial();">
+                                        Status</th>
+
+                                    <th style="min-width: 110px;" class="sticky_right">{{'Action'
+                                        | translate}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr
+                                    *ngFor="let item of dataList | filter: searchValue | paginate: { itemsPerPage: sortbyService.itemsPerPage, currentPage: sortbyService.page, id:'category_list', totalItems: totalItems }; let i=index;">
+                                    <td>{{((sortbyService.page-1) * sortbyService.itemsPerPage) + i+1}}</td>
+                                    <td>{{item.first_name}}</td>
+                                    <td>{{item.last_name}}</td>
+                                    <td>{{item.email}}</td>
+                                    <td>{{item.status}}</td>
+
+                                    <td class="sticky_right" style="width: 100px;">
+                                        <a class="text-decoration-none fa fa-trash ml-2 text-danger"
+                                            href="javascript:void(0)" (click)="deleteItem(item.id)"
+                                            *ngIf="item.status != 'deleted' && authService.userDetail.id!=item.id"
+                                            container="body" ngbTooltip="Delete User"></a>
+                                    </td>
+                                </tr>
+                                <tr *ngIf="!dataList.length">
+                                    <td colspan="16" class="text-center">{{'No record found'}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="pull-right mt-2">
+                    <pagination-controls class="float-right" id="category_list" (pageChange)="pageChange($event)"
+                        previousLabel="Previous" nextLabel="Next" screenReaderPaginationLabel="Pagination"
+                        screenReaderPageLabel="page" screenReaderCurrentLabel="You're on page">
+                    </pagination-controls>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
